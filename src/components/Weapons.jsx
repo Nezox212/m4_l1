@@ -17,8 +17,7 @@ const WeaponImage = ({ name }) => {
     return (
         <div className="card__img">
             <img
-                src={"/weapons/" + slug(name) + ".png"}
-                alt={name}
+                src={import.meta.env.BASE_URL + "weapons/" + slug(name) + ".png"}                   alt={name}
                 loading="lazy"
                 onError={() => setFailed(true)}
             />
