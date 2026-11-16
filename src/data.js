@@ -12,6 +12,13 @@ export const weapons = [
     { id: 11, name: "Desert Eagle", type: "pistol", side: "Both", price: 700 },
     { id: 12, name: "MAC-10", type: "smg", side: "T", price: 1050 },
     { id: 13, name: "MP9", type: "smg", side: "CT", price: 1250 },
+    { id: 14, name: "SG 553", type: "rifle", side: "T", price: 3000 },
+    { id: 15, name: "AUG", type: "rifle", side: "CT", price: 3300 },
+    { id: 16, name: "Tec-9", type: "pistol", side: "T", price: 500 },
+    { id: 17, name: "Five-SeveN", type: "pistol", side: "CT", price: 500 },
+    { id: 18, name: "P90", type: "smg", side: "Both", price: 2350 },
+    { id: 19, name: "MP7", type: "smg", side: "Both", price: 1500 },
+    { id: 20, name: "UMP-45", type: "smg", side: "Both", price: 1200 },
 ]
 
 export const maps = [

@@ -512,3 +512,6 @@
   text-transform: uppercase;
   border: 1px dashed var(--line);
 }
+.card {
+  cursor: pointer;
+}

@@ -1,29 +1,10 @@
 import { useState } from "react"
 import { weapons } from "../data"
+import WeaponCard from "./WeaponCard"
 
 const types = ["all", "rifle", "sniper", "pistol", "smg"]
 const sides = ["All", "T", "CT"]
 const MAX_PRICE = 4750
-
-const slug = (name) => name.toLowerCase().replace(/\s+/g, "-")
-
-const WeaponImage = ({ name }) => {
-    const [failed, setFailed] = useState(false)
-
-    if (failed) {
-        return <div className="card__img card__img--empty">{name}</div>
-    }
-
-    return (
-        <div className="card__img">
-            <img
-                src={import.meta.env.BASE_URL + "weapons/" + slug(name) + ".png"}                   alt={name}
-                loading="lazy"
-                onError={() => setFailed(true)}
-            />
-        </div>
-    )
-}
 
 const Weapons = () => {
     const [type, setType] = useState("all")
@@ -107,21 +88,15 @@ const Weapons = () => {
                 ) : (
                     <div className="cards">
                         {list.map((w) => (
-                            <div className="card" key={w.id}>
-                <span className={"badge badge--" + w.side.toLowerCase()}>
-                  {w.side}
-                </span>
-                                <WeaponImage name={w.name} />
-                                <h3>{w.name}</h3>
-                                <p className="card__type">{w.type}</p>
-                                <p className="card__price">${w.price}</p>
-                                <div className="bar">
-                                    <div
-                                        className="bar__fill"
-                                        style={{ width: (w.price / MAX_PRICE) * 100 + "%" }}
-                                    ></div>
-                                </div>
-                            </div>
+                            <WeaponCard
+                                key={w.id}
+                                id={w.id}
+                                name={w.name}
+                                type={w.type}
+                                side={w.side}
+                                price={w.price}
+                                maxPrice={MAX_PRICE}
+                            />
                         ))}
                     </div>
                 )}
